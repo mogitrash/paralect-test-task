@@ -1,0 +1,12 @@
+.mantine-Button-root {
+  transition: 0.1s all;
+
+  --button-bg: var(--mantine-color-purple-5);
+  --button-radius: 8px;
+  --button-hover: var(--mantine-color-purple-4);
+  &:active {
+    transform: none;
+    --button-bg: var(--mantine-color-purple-6);
+    --button-hover: var(--mantine-color-purple-6);
+  }
+}
