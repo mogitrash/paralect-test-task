@@ -1,5 +1,4 @@
 .tab {
-  padding: 10px;
   color: var(--mantine-color-grey-7);
   background-color: transparent;
 
@@ -7,23 +6,9 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 140%;
 
   &:hover {
     color: var(--mantine-color-purple-4);
     background-color: transparent;
-  }
-}
-
-.tab-active {
-  cursor: default;
-  color: var(--mantine-color-purple-5);
-  font-weight: 700;
-
-  background-color: var(--mantine-color-purple-2);
-
-  &:hover {
-    background-color: var(--mantine-color-purple-2);
-    color: var(--mantine-color-purple-5);
   }
 }

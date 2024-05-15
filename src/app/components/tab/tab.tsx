@@ -1,17 +1,17 @@
 import React, { ReactNode } from 'react';
+import { NavLink } from 'react-router-dom';
 import { Button } from '@mantine/core';
 import classes from './tab.module.scss';
+import './tab.scss';
 
 interface Props {
   children: ReactNode;
-  active: boolean;
+  to: string;
 }
 
-export default function Tab({ children, active }: Props) {
-  const className = classes.tab + (active ? ` ${classes['tab-active']}` : '');
-
+export default function Tab({ children, to }: Props) {
   return (
-    <Button className={className} component="a" justify="left" fullWidth>
+    <Button className={classes.tab} to={to} component={NavLink} justify="left" fullWidth>
       {children}
     </Button>
   );
