@@ -1,4 +1,6 @@
 .tab {
+  transition: 0.1s all;
+  height: 42px;
   color: var(--mantine-color-grey-7);
   background-color: transparent;
 
@@ -10,5 +12,9 @@
   &:hover {
     color: var(--mantine-color-purple-4);
     background-color: transparent;
+  }
+
+  &:active {
+    transform: none;
   }
 }
