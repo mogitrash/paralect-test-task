@@ -1,2 +1,35 @@
 .page-not-found {
+  background-color: var(--mantine-color-grey-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 48px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.text {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.logo {
+  cursor: pointer;
+
+  position: absolute;
+  top: 24px;
+  left: 24px;
 }

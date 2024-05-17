@@ -21,4 +21,12 @@
     "semi": 0,
     "react/jsx-filename-extension": ["error", { "extensions": [".ts", ".tsx"] }],
   },
+  "overrides": [
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "react/require-default-props": ["off"],
+      },
+    },
+  ],
 }
