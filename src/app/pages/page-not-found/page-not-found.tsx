@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import classes from './page-not-found.module.scss';
 import notFound from '../../../assets/not-found.svg';
 import logo from '../../../assets/arrowFlicks-logo.svg';
-import PrimaryButton from '../../components/button/primary-button';
+import PrimaryButton from '../../components/primary-button/primary-button';
 
 function PageNotFound() {
   return (

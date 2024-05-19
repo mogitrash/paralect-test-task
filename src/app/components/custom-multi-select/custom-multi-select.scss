@@ -1,0 +1,18 @@
+.multi-select {
+  .mantine-Pill-remove {
+    display: none;
+  }
+  .mantine-Pill-root {
+    padding: 0;
+    background-color: transparent;
+    &:not(:last-of-type)::after {
+      font-size: 14px;
+      content: ',';
+    }
+  }
+
+  .mantine-Pill-label {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
