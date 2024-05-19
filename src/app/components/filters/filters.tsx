@@ -26,7 +26,7 @@ function Filters() {
         key={form.key('genre')}
         placeholder="Select genre"
         label="Genres"
-        data={['Genre1', 'Genre2', 'Genre3']}
+        data={['Genre1', 'Genre2', 'Genre3', 'Genre4', 'Genre5', 'Genre6']}
       />
       <CustomMultiSelect
         {...form.getInputProps('year')}
@@ -42,7 +42,7 @@ function Filters() {
           <NumInput key={form.key('to')} {...form.getInputProps('to')} placeholder="To" />
         </div>
       </div>
-      <TextButton onClick={() => form.reset()} key={form.key('reset')}>
+      <TextButton className={classes.reset} onClick={() => form.reset()} key={form.key('reset')}>
         Reset filters
       </TextButton>
     </form>

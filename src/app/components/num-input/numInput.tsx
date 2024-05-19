@@ -11,6 +11,7 @@ export default function NumInput({ placeholder, ...props }: NumberInputProps) {
       classNames={{
         root: classes.root,
         input: classes.input,
+        label: classes.label,
       }}
     />
   );

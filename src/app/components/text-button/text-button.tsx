@@ -7,18 +7,21 @@ interface Props {
   children: ReactNode;
   onClick?: () => void;
   to?: string;
+  className?: string;
 }
 
-export default function TextButton({ children, onClick, to }: Props) {
+export default function TextButton({ children, onClick, to, className }: Props) {
+  const classNames = [classes['text-button'], className];
+
   if (to) {
     return (
-      <Button to={to} component={Link} className={classes['text-button']}>
+      <Button className={classNames.join(' ')} to={to} component={Link}>
         {children}
       </Button>
     );
   }
   return (
-    <Button onClick={onClick} className={classes['text-button']}>
+    <Button className={classNames.join(' ')} onClick={onClick}>
       {children}
     </Button>
   );

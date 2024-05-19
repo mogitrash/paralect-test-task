@@ -1,5 +1,8 @@
 .movies {
   width: 980px;
+  flex-direction: column;
+  gap: 24px;
+  display: flex;
 }
 
 .title {
@@ -7,4 +10,5 @@
   font-size: 32px;
   font-weight: 700;
   line-height: 140%;
+  margin: 40px 0;
 }
