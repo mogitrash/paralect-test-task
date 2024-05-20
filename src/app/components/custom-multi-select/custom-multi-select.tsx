@@ -21,7 +21,7 @@ export default function CustomMultiSelect({
         transition: '0.1s',
         transform: isOpen ? 'rotate(180deg)' : 'rotate(0)',
       }}
-      stroke={isOpen ? '#9854F6' : '#ACADB9'}
+      stroke={isOpen ? '#9854F6' : '#D5D6DC'}
     />
   );
 

@@ -1,0 +1,78 @@
+.movie-list-item {
+  flex-grow: 1;
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  border-radius: 12px;
+  background-color: var(--mantine-color-grey-0);
+  height: 218px;
+}
+
+.poster {
+  width: 119px;
+}
+
+.info {
+  display: flex;
+  flex-grow: 1;
+
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  color: var(--mantine-color-purple-5);
+
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.year {
+  color: var(--mantine-color-grey-6);
+  font-feature-settings:
+    'clig' off,
+    'liga' off;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+}
+
+.votes {
+  display: flex;
+  align-items: center;
+}
+
+.average {
+  display: block;
+  margin: 0 8px 0 4px;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px; /* 125% */
+}
+
+.count {
+  color: var(--mantine-color-grey-6);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.genres {
+  display: flex;
+  gap: 8px;
+  span {
+    color: var(--mantine-color-grey-6);
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+.favourite {
+  margin-left: -8px;
+}
