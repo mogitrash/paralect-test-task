@@ -1,22 +1,17 @@
 import { createAsyncThunk, createSelector, createSlice } from '@reduxjs/toolkit';
-import { RequestStatus } from '../../common/request-status.model';
-import { getAllGenres } from '../../api/genres';
-
-type GenresObjectMap = {
-  [key: number]: string;
-};
-
-export interface GenresState {
-  genresMap: GenresObjectMap;
-  requestStatus: RequestStatus;
-}
+import { GetAllGenresRequestDTO, getAllGenres } from '../../api/genres';
+import { StoreState } from '../store.model';
+import { GenresObjectMap, GenresState } from './genres.model';
 
 const initialState: GenresState = {
   genresMap: {},
   requestStatus: 'IDLE',
 };
 
-export const fetchGenres = createAsyncThunk('genres/fetchGenres', async () => getAllGenres());
+export const fetchGenres = createAsyncThunk(
+  'genres/fetchGenres',
+  async (params: GetAllGenresRequestDTO) => getAllGenres(params),
+);
 
 export const genresSlice = createSlice({
   name: 'genres',
@@ -41,7 +36,7 @@ export const genresSlice = createSlice({
   },
 });
 
-const selectGenresState = (state: any) => state.genres as GenresState;
+const selectGenresState = (state: StoreState) => state.genres;
 export const selectIsLoading = createSelector(
   selectGenresState,
   (state: GenresState) => state.requestStatus === 'PENDING' || state.requestStatus === 'IDLE',

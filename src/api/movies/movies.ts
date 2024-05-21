@@ -1,8 +1,8 @@
 import axiosInstance from '../axios';
-import { MovieDTO, GetAllMoviesResponseDTO, GetAllGMoviesRequestDTO } from './movies.model';
+import { MovieDTO, GetAllMoviesResponseDTO, GetAllMoviesRequestDTO } from './movies.model';
 
 export const getAllMovies = async (
-  params: GetAllGMoviesRequestDTO,
+  params: GetAllMoviesRequestDTO,
 ): Promise<GetAllMoviesResponseDTO> => {
   const response = await axiosInstance.get('3/discover/movie', {
     params,

@@ -16,7 +16,7 @@ export interface MovieDTO {
   vote_count: number;
 }
 
-export interface GetAllGMoviesRequestDTO {
+export interface GetAllMoviesRequestDTO {
   page?: number;
   primaryReleaseYear?: number;
   voteAverage?: number;

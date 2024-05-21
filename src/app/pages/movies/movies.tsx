@@ -2,14 +2,14 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import classes from './movies.module.scss';
 import MovieList from '../../../components/movie-list/movie-list';
-import { fetchGenres, selectIsLoading } from '../../../store/genres/genres.slice';
 import MovieListFilters from './components/movie-list-filters/movie-list-filters';
+import { fetchMovies, selectIsLoading } from '../../../store/movies/movies.slice';
 
 function Movies() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchGenres() as any);
+    dispatch(fetchMovies({ language: 'en-US' }) as any);
   }, [dispatch]);
 
   const isLoading = useSelector(selectIsLoading);
