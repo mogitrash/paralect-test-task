@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import classes from './movie-list-item.module.scss';
 import { MoviePreview } from '../../../models/movie-preview.model';
 import { ReactComponent as Star } from '../../../assets/star.svg';
@@ -34,4 +34,4 @@ function MovieListItem({
   );
 }
 
-export default MovieListItem;
+export default memo(MovieListItem);

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { Select as MantineSelect, SelectProps } from '@mantine/core';
 import { ReactComponent as Down } from '../../assets/down.svg';
 import classes from './select.module.scss';
 
-export default function Select({ data, label, placeholder, ...props }: SelectProps) {
+function Select({ data, label, placeholder, ...props }: SelectProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const rightSection = (
@@ -47,3 +47,5 @@ export default function Select({ data, label, placeholder, ...props }: SelectPro
     />
   );
 }
+
+export default memo(Select);

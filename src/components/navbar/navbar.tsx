@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 import Tab from '../tab/tab';
 import classes from './navbar.module.scss';
 import logo from '../../assets/arrowFlicks-logo.svg';
 
-export default function Navbar() {
+function Navbar() {
   return (
     <aside>
       <nav className={classes.navbar}>
@@ -19,3 +19,5 @@ export default function Navbar() {
     </aside>
   );
 }
+
+export default memo(Navbar);

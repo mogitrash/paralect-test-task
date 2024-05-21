@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useForm } from '@mantine/form';
 import classes from './movie-list-filters.module.scss';
 import NumInput from '../number-input/number-input';
@@ -69,4 +69,4 @@ function MovieListFilters() {
   );
 }
 
-export default MovieListFilters;
+export default memo(MovieListFilters);

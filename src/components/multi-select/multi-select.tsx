@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { MultiSelect as MantineMultiSelect, MultiSelectProps } from '@mantine/core';
 import { ReactComponent as Down } from '../../assets/down.svg';
 import './multi-select.scss';
 import classes from './multi-select.module.scss';
 
-export default function MultiSelect({ data, label, placeholder, ...props }: MultiSelectProps) {
+function MultiSelect({ data, label, placeholder, ...props }: MultiSelectProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedValues, setSelectedValues] = useState<string[]>([]);
 
@@ -59,3 +59,5 @@ export default function MultiSelect({ data, label, placeholder, ...props }: Mult
     />
   );
 }
+
+export default memo(MultiSelect);

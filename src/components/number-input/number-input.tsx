@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { NumberInput as MantineNumberInput, NumberInputProps } from '@mantine/core';
 import classes from './number-input.module.scss';
 
-export default function NumberInput({ placeholder, ...props }: NumberInputProps) {
+function NumberInput({ placeholder, ...props }: NumberInputProps) {
   return (
     <MantineNumberInput
       {...props}
@@ -17,3 +17,5 @@ export default function NumberInput({ placeholder, ...props }: NumberInputProps)
     />
   );
 }
+
+export default memo(NumberInput);

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { Button as MantineButton, ButtonVariant } from '@mantine/core';
 import classes from './button.module.scss';
@@ -11,7 +11,7 @@ interface Props {
   className?: string;
 }
 
-export default function Button({ children, to, variant, onClick, className }: Props) {
+function Button({ children, to, variant, onClick, className }: Props) {
   const classNames = [className];
 
   if (variant === 'subtle') {
@@ -34,3 +34,5 @@ export default function Button({ children, to, variant, onClick, className }: Pr
     </MantineButton>
   );
 }
+
+export default memo(Button);

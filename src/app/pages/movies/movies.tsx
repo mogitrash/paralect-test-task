@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import classes from './movies.module.scss';
 import MovieList from '../../../components/movie-list/movie-list';
 import { fetchGenres, selectIsLoading } from '../../../store/genres/genres.slice';
-import MovieListFilters from '../../../components/filters/movie-list-filters';
+import MovieListFilters from '../../../components/movie-list-filters/movie-list-filters';
 
 function Movies() {
   const dispatch = useDispatch();
