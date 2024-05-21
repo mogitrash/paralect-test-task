@@ -4,6 +4,8 @@ import './index.scss';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import { MantineProvider } from '@mantine/core';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 import App from './app/app';
 import Movies from './app/pages/movies/movies';
 import PageNotFound from './app/pages/page-not-found/page-not-found';
@@ -32,9 +34,11 @@ const container = document.getElementById('root')!;
 const root = createRoot(container);
 
 root.render(
-  <MantineProvider theme={theme}>
-    <React.StrictMode>
-      <RouterProvider router={router} />
-    </React.StrictMode>
-  </MantineProvider>,
+  <Provider store={store}>
+    <MantineProvider theme={theme}>
+      <React.StrictMode>
+        <RouterProvider router={router} />
+      </React.StrictMode>
+    </MantineProvider>
+  </Provider>,
 );

@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import classes from './movies.module.scss';
+import Sort from '../../../components/sort/sort';
+import MovieList from '../../../components/movie-list/movie-list';
+import { fetchGenres, selectIsLoading } from '../../../store/genres/genres.slice';
 import MovieListFilters from '../../components/filters/movie-list-filters';
-import MovieList from '../../components/movie-list/movie-list';
 
 function Movies() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchGenres() as any);
+  }, [dispatch]);
+
+  const isLoading = useSelector(selectIsLoading);
+
+  if (isLoading) {
+    return <div>Loading</div>;
+  }
+
   return (
     <main className={classes.movies}>
       <h2 className={classes.title}>Movies</h2>

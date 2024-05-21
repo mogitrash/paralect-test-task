@@ -1,0 +1,24 @@
+.filters {
+  display: flex;
+  gap: 16px;
+}
+
+.ratings-wrapper {
+  display: flex;
+  width: 280px;
+  gap: 8px;
+}
+
+.ratings {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 140%;
+
+  display: block;
+  margin-bottom: 8px;
+}
+
+.reset {
+  align-self: flex-end;
+}
