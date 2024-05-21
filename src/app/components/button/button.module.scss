@@ -20,3 +20,25 @@
     background-color: var(--mantine-color-purple-6);
   }
 }
+
+.text-button {
+  padding: 0;
+  transition: 0.1s all;
+  color: var(--mantine-color-purple-5);
+  background-color: transparent;
+  align-self: flex-end;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  &:hover {
+    color: var(--mantine-color-purple-4);
+    background-color: transparent;
+  }
+
+  &:active {
+    transform: none;
+    color: var(--mantine-color-purple-6);
+    background-color: transparent;
+  }
+}

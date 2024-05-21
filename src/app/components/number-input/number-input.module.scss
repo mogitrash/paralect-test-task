@@ -11,3 +11,13 @@
   border-radius: 8px;
   padding: 8px 12px;
 }
+
+.control {
+  color: var(--mantine-color-grey-5);
+
+  &:hover {
+    border-color: unset;
+    border: unset;
+    background: unset;
+  }
+}

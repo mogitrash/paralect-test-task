@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import classes from './page-not-found.module.scss';
 import notFound from '../../../assets/not-found.svg';
 import logo from '../../../assets/arrowFlicks-logo.svg';
-import PrimaryButton from '../../components/primary-button/primary-button';
+import Button from '../../components/button/button';
 
 function PageNotFound() {
   return (
@@ -16,7 +16,7 @@ function PageNotFound() {
         <img src={notFound} alt="Page not found" />
         <div className={classes.info}>
           <span className={classes.text}>We can’t find the page you are looking for</span>
-          <PrimaryButton to="/">go home</PrimaryButton>
+          <Button to="/">go home</Button>
         </div>
       </div>
     </main>

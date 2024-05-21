@@ -1,3 +1,7 @@
+.sort {
+  margin-left: auto;
+}
+
 .label {
   font-family: Inter;
   font-size: 16px;
@@ -17,6 +21,11 @@
 
 .input {
   border: 1px solid var(--mantine-color-grey-3);
+  border-radius: 8px;
+}
+
+.input-active {
+  border: 1px solid var(--mantine-color-purple-5);
   border-radius: 8px;
 }
 

@@ -1,6 +1,7 @@
 .filters {
   display: flex;
   gap: 16px;
+  flex-wrap: wrap;
 }
 
 .ratings-wrapper {
@@ -17,8 +18,4 @@
 
   display: block;
   margin-bottom: 8px;
-}
-
-.reset {
-  align-self: flex-end;
 }
