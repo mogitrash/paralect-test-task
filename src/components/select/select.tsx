@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Select as MantineSelect, SelectProps } from '@mantine/core';
-import { ReactComponent as Down } from '../../../assets/down.svg';
+import { ReactComponent as Down } from '../../assets/down.svg';
 import classes from './select.module.scss';
 
 export default function Select({ data, label, placeholder, ...props }: SelectProps) {
