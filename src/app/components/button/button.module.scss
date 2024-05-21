@@ -1,0 +1,44 @@
+.primary-button {
+  padding: 10px 20px;
+  text-transform: capitalize;
+  transition: 0.1s all;
+  height: 42px;
+  color: var(--mantine-color-grey-0);
+  background-color: var(--mantine-color-purple-5);
+
+  width: min-content;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+
+  &:hover {
+    background-color: var(--mantine-color-purple-4);
+  }
+
+  &:active {
+    transform: none;
+    background-color: var(--mantine-color-purple-6);
+  }
+}
+
+.text-button {
+  padding: 0;
+  transition: 0.1s all;
+  color: var(--mantine-color-purple-5);
+  background-color: transparent;
+  align-self: flex-end;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  &:hover {
+    color: var(--mantine-color-purple-4);
+    background-color: transparent;
+  }
+
+  &:active {
+    transform: none;
+    color: var(--mantine-color-purple-6);
+    background-color: transparent;
+  }
+}

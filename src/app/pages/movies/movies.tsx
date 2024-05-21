@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import classes from './movies.module.scss';
-import Filters from '../../../components/filters/filters';
 import Sort from '../../../components/sort/sort';
 import MovieList from '../../../components/movie-list/movie-list';
 import { fetchGenres, selectIsLoading } from '../../../store/genres/genres.slice';
+import MovieListFilters from '../../components/filters/movie-list-filters';
 
 function Movies() {
   const dispatch = useDispatch();
@@ -22,8 +22,7 @@ function Movies() {
   return (
     <main className={classes.movies}>
       <h2 className={classes.title}>Movies</h2>
-      <Filters />
-      <Sort />
+      <MovieListFilters />
       <MovieList />
     </main>
   );

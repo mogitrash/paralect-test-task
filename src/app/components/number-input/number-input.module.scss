@@ -1,0 +1,23 @@
+.root {
+  width: 100%;
+
+  :hover {
+    border-color: var(--mantine-color-purple-5);
+  }
+}
+
+.input {
+  border: 1px solid var(--mantine-color-grey-3);
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.control {
+  color: var(--mantine-color-grey-5);
+
+  &:hover {
+    border-color: unset;
+    border: unset;
+    background: unset;
+  }
+}
