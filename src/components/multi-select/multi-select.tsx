@@ -1,7 +1,6 @@
 import React, { memo, useState } from 'react';
 import { MultiSelect as MantineMultiSelect, MultiSelectProps } from '@mantine/core';
 import { ReactComponent as Down } from '../../assets/down.svg';
-import './multi-select.scss';
 import classes from './multi-select.module.scss';
 
 function MultiSelect({ data, label, placeholder, ...props }: MultiSelectProps) {

@@ -4,3 +4,35 @@ body,
   background-color: var(--mantine-color-grey-1);
   height: 100%;
 }
+
+.active {
+  cursor: default;
+  color: var(--mantine-color-purple-5);
+  font-weight: 700;
+
+  background-color: var(--mantine-color-purple-2);
+
+  &:hover {
+    background-color: var(--mantine-color-purple-2);
+    color: var(--mantine-color-purple-5);
+  }
+}
+
+.multi-select {
+  .mantine-Pill-remove {
+    display: none;
+  }
+  .mantine-Pill-root {
+    padding: 0;
+    background-color: transparent;
+    &:not(:last-of-type)::after {
+      font-size: 14px;
+      content: ',';
+    }
+  }
+
+  .mantine-Pill-label {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}

@@ -1,6 +1,5 @@
 import React from 'react';
 import '@mantine/core/styles.css';
-import './index.scss';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import { MantineProvider } from '@mantine/core';
@@ -11,6 +10,7 @@ import Movies from './app/pages/movies/movies';
 import PageNotFound from './app/pages/page-not-found/page-not-found';
 import RatedMovies from './app/pages/rated-movies/rated-movies';
 import theme from './theme';
+import './index.scss';
 
 const router = createBrowserRouter([
   {

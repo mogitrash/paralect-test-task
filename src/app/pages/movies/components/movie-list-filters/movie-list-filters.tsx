@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
 import { useForm } from '@mantine/form';
 import classes from './movie-list-filters.module.scss';
-import NumInput from '../number-input/number-input';
-import MultiSelect from '../multi-select/multi-select';
-import Button from '../button/button';
-import Select from '../select/select';
+import NumInput from '../../../../../components/number-input/number-input';
+import MultiSelect from '../../../../../components/multi-select/multi-select';
+import Button from '../../../../../components/button/button';
+import Select from '../../../../../components/select/select';
 
 function MovieListFilters() {
   const initialValues = {

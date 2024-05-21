@@ -4,5 +4,5 @@ export interface GenreDTO {
 }
 
 export interface GetAllGenresRequestDTO {
-  language: string;
+  language?: string;
 }

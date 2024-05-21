@@ -16,6 +16,21 @@ export interface MovieDTO {
   vote_count: number;
 }
 
+export interface GetAllGMoviesRequestDTO {
+  page?: number;
+  primaryReleaseYear?: number;
+  voteAverage?: number;
+  withGenres?: string; // NOTE: can be a comma (AND) or pipe (OR) separated query
+  language?: string;
+}
+
+export interface GetAllMoviesResponseDTO {
+  page: number;
+  results: MovieDTO[];
+  total_page: number;
+  total_results: number;
+}
+
 export interface ProductionCompanyDTO {
   id: number;
   logo_path: string;

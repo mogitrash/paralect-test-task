@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSelector, createSlice } from '@reduxjs/toolkit';
-import { RequestStatus } from '../common/request-status.model';
+import { RequestStatus } from '../../common/request-status.model';
 import { getAllGenres } from '../../api/genres';
 
 type GenresObjectMap = {
