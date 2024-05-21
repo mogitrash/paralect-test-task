@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Select } from '@mantine/core';
 import { useField } from '@mantine/form';
-import { ReactComponent as Down } from '../../../assets/down.svg';
+import { ReactComponent as Down } from '../../assets/down.svg';
 import classes from './sort.module.scss';
 
 function Sort() {

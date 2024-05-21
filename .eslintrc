@@ -23,10 +23,11 @@
   },
   "overrides": [
     {
-      "files": ["*.tsx"],
+      "files": ["*.tsx", "*.ts"],
       "rules": {
         "react/require-default-props": ["off"],
         "react/jsx-props-no-spreading": ["off"],
+        "import/prefer-default-export": "off",
       },
     },
   ],

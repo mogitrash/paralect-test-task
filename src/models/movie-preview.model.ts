@@ -1,6 +1,6 @@
-import Genre from './genre';
+import { Genre } from './genre.model';
 
-export default interface MoviePreview {
+export interface MoviePreview {
   title: string;
   releaseDate: string;
   voteAverage: number;

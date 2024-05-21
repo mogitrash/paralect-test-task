@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Tab from '../tab/tab';
 import classes from './navbar.module.scss';
-import logo from '../../../assets/arrowFlicks-logo.svg';
+import logo from '../../assets/arrowFlicks-logo.svg';
 
 export default function Navbar() {
   return (

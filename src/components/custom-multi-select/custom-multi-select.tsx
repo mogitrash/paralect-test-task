@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MultiSelect, MultiSelectProps } from '@mantine/core';
-import { ReactComponent as Down } from '../../../assets/down.svg';
+import { ReactComponent as Down } from '../../assets/down.svg';
 import './custom-multi-select.scss';
 import classes from './custom-multi-select.module.scss';
 
