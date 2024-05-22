@@ -6,7 +6,6 @@ export interface MovieDTO {
   id: number;
   imdb_id: string;
   poster_path: string;
-  // production_companies: ProductionCompanyDTO[];
   release_date: string;
   revenue: number;
   runtime: number;
@@ -18,10 +17,12 @@ export interface MovieDTO {
 
 export interface GetAllMoviesRequestDTO {
   page?: number;
-  primaryReleaseYear?: number;
-  voteAverage?: number;
-  withGenres?: string; // NOTE: can be a comma (AND) or pipe (OR) separated query
+  primary_release_year?: number;
+  with_genres?: string; // NOTE: can be a comma (AND) or pipe (OR) separated query
   language?: string;
+  'vote_average.gte'?: number;
+  'vote_average.lte'?: number;
+  sort_by?: string;
 }
 
 export interface GetAllMoviesResponseDTO {

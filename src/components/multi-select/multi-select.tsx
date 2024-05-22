@@ -15,7 +15,7 @@ function MultiSelect({ data, label, placeholder, ...props }: MultiSelectProps) {
         transition: '0.1s',
         transform: isOpen ? 'rotate(180deg)' : 'rotate(0)',
       }}
-      stroke={isOpen ? '#9854F6' : '#D5D6DC'}
+      stroke={isOpen ? '#9854F6' : '#ACADB9'}
     />
   );
 

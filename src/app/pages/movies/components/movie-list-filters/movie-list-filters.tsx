@@ -1,29 +1,98 @@
 import React, { memo } from 'react';
+import { ComboboxData } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import classes from './movie-list-filters.module.scss';
 import NumInput from '../../../../../components/number-input/number-input';
 import MultiSelect from '../../../../../components/multi-select/multi-select';
 import Button from '../../../../../components/button/button';
 import Select from '../../../../../components/select/select';
+import { FilterFormValue } from '../../../../../models/filter-form-value.model';
 
-function MovieListFilters() {
+const sorts: ComboboxData = [
+  {
+    value: 'original_title.asc',
+    label: 'Original Title Ascending',
+  },
+  {
+    value: 'original_title.desc',
+    label: 'Original Title Descending',
+  },
+  {
+    value: 'popularity.asc',
+    label: 'Least Popular',
+  },
+  {
+    value: 'popularity.desc',
+    label: 'Most Popular',
+  },
+  {
+    value: 'revenue.asc',
+    label: 'Smallest Revenue',
+  },
+  {
+    value: 'revenue.desc',
+    label: 'Biggest Revenue',
+  },
+  {
+    value: 'primary_release_date.asc',
+    label: 'Oldest',
+  },
+  {
+    value: 'primary_release_date.desc',
+    label: 'Newest',
+  },
+  {
+    value: 'title.asc',
+    label: 'Title Ascending',
+  },
+  {
+    value: 'title.desc',
+    label: 'Title Descending',
+  },
+
+  {
+    value: 'vote_average.asc',
+    label: 'Least Rated',
+  },
+  {
+    value: 'vote_average.desc',
+    label: 'Most Rated',
+  },
+  {
+    value: 'vote_count.asc',
+    label: 'Least Voted',
+  },
+  {
+    value: 'vote_count.desc',
+    label: 'Most Voted',
+  },
+];
+
+function MovieListFilters({
+  handleFiltersChange,
+  genres,
+  years,
+}: {
+  handleFiltersChange: (formValue: FilterFormValue) => void;
+  genres: ComboboxData;
+  years: string[];
+}) {
   const initialValues = {
     from: '',
     to: '',
-    year: [],
-    genre: [],
+    year: '',
+    genres: [],
     sort: '',
   };
 
-  const form = useForm<{ from: string; to: string; year: string[]; genre: string[]; sort: string }>(
-    {
-      mode: 'uncontrolled',
-      initialValues,
+  const form = useForm<{ from: string; to: string; year: string; genres: number[]; sort: string }>({
+    mode: 'uncontrolled',
+    initialValues,
 
-      // onValuesChange: (values) => {
-      // },
+    onValuesChange: (values) => {
+      handleFiltersChange(values);
     },
-  );
+  });
 
   const resetForm = () => {
     form.setValues({
@@ -35,18 +104,18 @@ function MovieListFilters() {
   return (
     <form className={classes.filters}>
       <MultiSelect
-        {...form.getInputProps('genre')}
-        key={form.key('genre')}
+        {...form.getInputProps('genres')}
+        key={form.key('genres')}
         placeholder="Select genre"
         label="Genres"
-        data={['Genre1', 'Genre2', 'Genre3', 'Genre4', 'Genre5', 'Genre6']}
+        data={genres}
       />
-      <MultiSelect
+      <Select
         {...form.getInputProps('year')}
         key={form.key('year')}
         placeholder="Select release year"
         label="Release year"
-        data={['2024', '2023', '2022']}
+        data={years}
       />
       <div>
         <span className={classes.ratings}>Ratings</span>
@@ -55,7 +124,7 @@ function MovieListFilters() {
           <NumInput key={form.key('to')} {...form.getInputProps('to')} placeholder="To" />
         </div>
       </div>
-      <Button variant="subtle" onClick={() => resetForm()} key={form.key('reset')}>
+      <Button variant="text" onClick={() => resetForm()} key={form.key('reset')}>
         Reset filters
       </Button>
       <Select
@@ -63,7 +132,7 @@ function MovieListFilters() {
         {...form.getInputProps('sort')}
         label="Sort by"
         placeholder="Select sort"
-        data={['sort1', 'sort2', 'sort3']}
+        data={sorts}
       />
     </form>
   );

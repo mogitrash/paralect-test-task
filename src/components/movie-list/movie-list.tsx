@@ -10,11 +10,11 @@ function MovieList({ movies }: { movies: MoviePreview[] }) {
         <MovieListItem
           id={id}
           key={id}
-          genres={genres}
+          genres={genres ?? []}
           title={title}
-          releaseDate={releaseDate}
-          voteAverage={voteAverage}
-          voteCount={voteCount}
+          releaseDate={releaseDate?.split('-')[0]}
+          voteAverage={voteAverage ?? 0}
+          voteCount={voteCount ?? 0}
           posterPath={posterPath}
         />
       ))}

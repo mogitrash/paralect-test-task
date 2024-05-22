@@ -5,6 +5,7 @@ import { StoreState } from '../store.model';
 import { MoviesState } from './movies.model';
 import { MoviePreview } from '../../models/movie-preview.model';
 import { selectGenresMap } from '../genres/genres.selectors';
+import noPoster from '../../assets/no-poster.png';
 
 const selectMoviesState = (state: StoreState) => state.movies;
 export const selectMoviesPreview = createSelector(
@@ -14,11 +15,11 @@ export const selectMoviesPreview = createSelector(
     state.movies.map(
       (movie): MoviePreview => ({
         ...movie,
-        genres: movie.genresIds.map((genreId) => ({
+        genres: movie.genresIds?.map((genreId) => ({
           id: genreId,
           name: genresMap?.[genreId] || '',
         })),
-        posterPath: imagePathBuilder(movie.posterPath, 154),
+        posterPath: movie.posterPath ? imagePathBuilder(movie.posterPath, 154) : noPoster,
       }),
     ),
 );
