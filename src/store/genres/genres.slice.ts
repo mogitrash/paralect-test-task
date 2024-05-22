@@ -1,6 +1,5 @@
-import { createAsyncThunk, createSelector, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { GetAllGenresRequestDTO, getAllGenres } from '../../api/genres';
-import { StoreState } from '../store.model';
 import { GenresObjectMap, GenresState } from './genres.model';
 
 const initialState: GenresState = {
@@ -35,11 +34,5 @@ export const genresSlice = createSlice({
     });
   },
 });
-
-const selectGenresState = (state: StoreState) => state.genres;
-export const selectIsLoading = createSelector(
-  selectGenresState,
-  (state: GenresState) => state.requestStatus === 'PENDING' || state.requestStatus === 'IDLE',
-);
 
 export default genresSlice.reducer;

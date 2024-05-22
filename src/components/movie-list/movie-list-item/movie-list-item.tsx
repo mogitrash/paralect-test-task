@@ -9,7 +9,7 @@ function MovieListItem({
   voteAverage,
   voteCount,
   posterPath,
-  // genres,
+  genres,
 }: MoviePreview) {
   return (
     <div className={classes['movie-list-item']}>
@@ -26,7 +26,7 @@ function MovieListItem({
         </div>
         <div className={classes.genres}>
           <span>Genres</span>
-          {/* <div>{` ${genres.map((genre) => genre.name).join(', ')}`}</div> */}
+          <div>{` ${genres.map((genre) => genre.name).join(', ')}`}</div>
         </div>
       </div>
       <Star className={classes.favourite} />
