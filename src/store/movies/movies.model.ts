@@ -3,11 +3,11 @@ import { RequestStatus } from '../../common/request-status.model';
 export interface MoviesState {
   movies: Movie[];
   requestStatus: RequestStatus;
+  currentMovie: MovieDetails | null;
 }
 
 export interface Movie {
   adult: boolean;
-  backdropPath: string;
   budget: number;
   genresIds: number[];
   id: number;
@@ -20,6 +20,10 @@ export interface Movie {
   video: boolean;
   voteAverage: number;
   voteCount: number;
+}
+
+export interface MovieDetails extends Movie {
+  productionCompanies: ProductionCompany[];
 }
 
 export interface ProductionCompany {

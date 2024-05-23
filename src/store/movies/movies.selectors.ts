@@ -27,3 +27,8 @@ export const selectIsMoviesLoading = createSelector(
   selectMoviesState,
   (state: MoviesState) => state.requestStatus === 'PENDING' || state.requestStatus === 'IDLE',
 );
+
+export const selectCurrentMovie = createSelector(
+  selectMoviesState,
+  (state: MoviesState) => state.currentMovie,
+);

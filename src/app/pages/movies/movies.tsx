@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import classes from './movies.module.scss';
 import MovieList from '../../../components/movie-list/movie-list';
@@ -19,18 +19,21 @@ function Movies() {
     dispatch(fetchGenres({ language: 'en' }) as any);
   }, [dispatch]);
 
-  const handleFiltersChange = ({ year, genres, from, to, sort }: FilterFormValue) => {
-    dispatch(
-      fetchMovies({
-        language: 'en-US',
-        primary_release_year: year ? +year : undefined,
-        with_genres: genres.join('|'),
-        'vote_average.gte': from ? +from : undefined,
-        'vote_average.lte': to ? +to : undefined,
-        sort_by: sort || undefined,
-      }) as any,
-    );
-  };
+  const handleFiltersChange = useCallback(
+    ({ year, genres, from, to, sort }: FilterFormValue) => {
+      dispatch(
+        fetchMovies({
+          language: 'en-US',
+          primary_release_year: year ? +year : undefined,
+          with_genres: genres.join('|'),
+          'vote_average.gte': from ? +from : undefined,
+          'vote_average.lte': to ? +to : undefined,
+          sort_by: sort || undefined,
+        }) as any,
+      );
+    },
+    [dispatch],
+  );
 
   const isGenresLoading = useSelector(selectIsGenresLoading);
   const isMoviesLoading = useSelector(selectIsMoviesLoading);

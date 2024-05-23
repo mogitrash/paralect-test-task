@@ -1,6 +1,5 @@
 export interface MovieDTO {
   adult: boolean;
-  backdrop_path: string;
   budget: number;
   genre_ids: number[];
   id: number;
@@ -13,6 +12,10 @@ export interface MovieDTO {
   video: boolean;
   vote_average: number;
   vote_count: number;
+}
+
+export interface MovieDetailsDTO extends MovieDTO {
+  production_companies: ProductionCompanyDTO[];
 }
 
 export interface GetAllMoviesRequestDTO {
